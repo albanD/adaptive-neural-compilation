@@ -1,0 +1,10 @@
+var read_addr = 1;
+var zero_constant = 0;
+var write_addr = READ(write_addr);
+label_1:var value = READ(read_addr);
+JEZ(value, label_2);
+WRITE(write_addr, value);
+read_addr = INC(read_addr);
+write_addr = INC(write_addr);
+JEZ(zero_constant, label_1);
+label_2:STOP();

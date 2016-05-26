@@ -1,0 +1,11 @@
+var arg1 = 0;
+var arg2 = 1;
+var always_zero = 0;
+arg1 = READ(arg1);
+arg2 = READ(arg2);
+loop_start: JEZ(arg2, prog_end);
+arg2 = DEC(arg2);
+arg1 = INC(arg1);
+JEZ(always_zero, loop_start);
+prog_end:WRITE(always_zero, arg1);
+STOP();
